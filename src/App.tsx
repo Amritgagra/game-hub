@@ -1,7 +1,7 @@
 import { Grid, GridItem, Show, useBreakpointValue } from "@chakra-ui/react";
+import Navbar from "./components/ui/Navbar";
 
 function App() {
-  // Use `useBreakpointValue` to determine if the screen size is "lg" or larger
   const showAside = useBreakpointValue({ base: false, lg: true });
 
   return (
@@ -13,7 +13,7 @@ function App() {
         }}
       >
         <GridItem area={"nav"} bg={"gold"}>
-          Nav
+          <Navbar />
         </GridItem>
         <Show when={showAside}>
           <GridItem area={"aside"} bg={"lightblue"}>
