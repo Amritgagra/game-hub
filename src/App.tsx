@@ -17,9 +17,11 @@ function App() {
           <Navbar />
         </GridItem>
         <Show when={showAside}>
-          <GridItem area={"aside"}>aside</GridItem>
+          <GridItem width={"300px"} area={"aside"}>
+            aside
+          </GridItem>
         </Show>
-        <GridItem area={"main"}>
+        <GridItem paddingInline={4} area={"main"}>
           <GameGrid />
         </GridItem>
       </Grid>
