@@ -10,7 +10,7 @@ interface Props {
 const GameCard = ({ game }: Props) => {
   return (
     <>
-      <Card.Root>
+      <Card.Root borderRadius={"10px"} overflow={"hidden"}>
         <Image
           height={"240px"}
           objectFit={"cover"}
