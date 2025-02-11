@@ -1,11 +1,12 @@
 import useGenre from "@/hooks/useGenre";
 import getCroppedImageUrl from "@/services/getCroppedImageUrl";
-import { Box, HStack, Image, Text } from "@chakra-ui/react";
+import { Box, HStack, Image, Spinner, Text } from "@chakra-ui/react";
 
 const GenreList = () => {
-  const { data } = useGenre();
+  const { data, isLoading } = useGenre();
   return (
     <>
+      {isLoading && <Spinner size="lg" />}
       <Box as="ul">
         {data.map((genre) => (
           <Box as="li" key={genre.id} paddingBlock="5px">
