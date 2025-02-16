@@ -3,10 +3,11 @@ import getCroppedImageUrl from "@/services/getCroppedImageUrl";
 import { Box, HStack, Image, Link, Spinner } from "@chakra-ui/react";
 
 interface Props {
-  selectedGenre: (genre: Genre) => void;
+  onSelectedGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({ selectedGenre }: Props) => {
+const GenreList = ({ onSelectedGenre, selectedGenre }: Props) => {
   const { data, isLoading } = useGenre();
   return (
     <>
@@ -20,7 +21,11 @@ const GenreList = ({ selectedGenre }: Props) => {
                 boxSize="32px"
                 borderRadius={8}
               />
-              <Link onClick={() => selectedGenre(genre)} fontSize="lg">
+              <Link
+                fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
+                onClick={() => onSelectedGenre(genre)}
+                fontSize="lg"
+              >
                 {genre.name}
               </Link>
             </HStack>
