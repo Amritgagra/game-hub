@@ -26,9 +26,7 @@ const PlatformSelector = ({ onSelectedPlatform, selectedPlatform }: Props) => {
           colorPalette={"gray"}
         >
           {selectedPlatform?.name || "Platforms"}
-          <Icon width={4}>
-            <BsChevronDown />
-          </Icon>
+          <Icon as={BsChevronDown} boxSize={4} />
         </Button>
       </MenuTrigger>
       <MenuContent>
