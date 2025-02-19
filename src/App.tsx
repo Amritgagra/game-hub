@@ -1,8 +1,8 @@
 import {
   Box,
+  Flex,
   Grid,
   GridItem,
-  HStack,
   Show,
   useBreakpointValue,
 } from "@chakra-ui/react";
@@ -49,8 +49,8 @@ function App() {
           </GridItem>
         </Show>
         <GridItem paddingInline={4} area={"main"}>
-          <HStack>
-            <Box marginBottom={5}>
+          <Flex>
+            <Box marginBottom={5} marginRight={5}>
               <PlatformSelector
                 selectedPlatform={gameQuery.platform}
                 onSelectedPlatform={(platform) =>
@@ -66,7 +66,7 @@ function App() {
                 }
               />
             </Box>
-          </HStack>
+          </Flex>
           <GameGrid gameQuery={gameQuery} />
         </GridItem>
       </Grid>

@@ -5,7 +5,8 @@ import {
   MenuTrigger,
 } from "@/components/ui/menu";
 import usePlatforms, { Platform } from "@/hooks/usePlatforms";
-import { Button } from "@chakra-ui/react";
+import { Button, Icon } from "@chakra-ui/react";
+import { BsChevronDown } from "react-icons/bs";
 
 interface Props {
   onSelectedPlatform: (platform: Platform) => void;
@@ -25,6 +26,7 @@ const PlatformSelector = ({ onSelectedPlatform, selectedPlatform }: Props) => {
           colorPalette={"gray"}
         >
           {selectedPlatform?.name || "Platforms"}
+          <Icon as={BsChevronDown} boxSize={4} />
         </Button>
       </MenuTrigger>
       <MenuContent>
