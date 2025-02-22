@@ -30,11 +30,11 @@ function App() {
   return (
     <>
       <Grid
-        gridTemplateAreas={{
+        templateAreas={{
           base: `"nav" "main"`,
           lg: `"nav nav" "aside main"`,
         }}
-        gridTemplateColumns={{
+        templateColumns={{
           base: "1fr",
           lg: "200px 1fr",
         }}
